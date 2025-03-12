@@ -1,0 +1,62 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background setup and centering content */
+body {
+    min-height: 100vh;
+    /* Updated gradient with more elegant color combination */
+    background: linear-gradient(135deg, #3c3579, #6c177b, #700808, #677c12, #749a13, #3a1c71, #000000, #4a00e0);
+    background-size: 300% 300%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    transition: background-position 0.3s ease;
+}
+
+/* Main heading styles with gradient text effect */
+h1 {
+    font-size: 4rem;
+    /* Multi-color gradient setup */
+    background: linear-gradient(45deg, #FF1493, #4169E1, #32CD32, #FFD700, #FF1493);
+    background-size: 400% 400%;
+    /* Make text transparent to show gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    cursor: pointer;
+    /* Smooth transitions for hover and glow effects */
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect - gradient animation and zoom */
+h1:hover {
+    animation: gradient-shift 6s ease infinite;
+    transform: scale(1.05);
+}
+
+/* Glow effect when clicked */
+h1.glow {
+    filter: drop-shadow(0 0 10px #FF1493) 
+            drop-shadow(0 0 20px #4169E1) 
+            drop-shadow(0 0 30px #32CD32);
+}
+
+/* Gradient animation keyframes */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
